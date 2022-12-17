@@ -1,0 +1,5 @@
+cmake_minimum_required(VERSION 3.10.0)
+add_executable(tree-test tree.cpp test.cpp)
+target_link_libraries(tree-test PUBLIC doctest default)
+add_test(NAME tree-test COMMAND tree-test --force-colors -d)
+add_custom_target(cloud-test COMMAND tree-test --force-colors -d)
