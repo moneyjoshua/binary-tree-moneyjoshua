@@ -1,5 +1,7 @@
 #include "tree.hpp"
 
+using namespace std;
+
 auto tree::insert(int val) -> tree_node * {
     // Код для добавления элемента в дерево
     
@@ -57,7 +59,7 @@ auto tree::remove(int val) -> bool {
         if (val < node->value) {
             node = node->left.get();
         }
-        if (val > node->value) {
+        else if (val > node->value) {
             node = node->right.get();
         }
     }
